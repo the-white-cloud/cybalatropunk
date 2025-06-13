@@ -9,42 +9,49 @@
 
 
 SMODS.Atlas{
-    key = 'Jokers',
+    key = 'j_cbpunk_jokers',
     path = 'misty_joker.png',
     px = 71,
     py = 95
 }
 
-
 SMODS.Joker{
-    key = 'misty_cbpunk',
-    loc_txt = {
-        name = "Misty",
-        text = {
-            'Gains x0.25 mult per tarot card used\
-            starts with x1 mult'
-        }
-    },
-    atlas = 'Jokers',
-    pos = {x = 0, y = 0},
-    config = {
-        extra = {
-            Xmult = 1
-        }
-    },
-    loc_vars = function(self, info_queue, center)
-        return {vars = {center.ability.extra.Xmult}}
+	name = "j_cbpunk_Misty",
+	key = "misty",
+	config = {extra = {Xmult = 1, Xmult_scale = 0.25}},
+	pos = {x = 0, y = 0},
+	rarity = 3,
+	cost = 7,
+	discovered = true,
+	blueprint_compat = true,
+	eternal_compat = true,
+	perishable_compat = true,
+	atlas = "j_cbpunk_jokers",
+	credit = {
+		art = "Jules (the-white-cloud)",
+		code = "Jules (the-white-cloud)",
+		concept = "Jules (the-white-cloud)"
+	},
+    description = "Gains +0.25 XMult per tarot card used this run.",
+    loc_vars = function(self, info_queue, card)
+        return {vars = {card.ability.extra.Xmult, card.ability.extra.Xmult_scale}}
     end,
+
     calculate = function(self, card, context)
+        if context.using_consumeable and not context.blueprint and (context.consumeable.ability.set == "Tarot") then
+            card.ability.extra.XMult = 1 + card.ability.extra.Xmult_scale * G.GAME.consumeable_usage_total.tarot
+        end
+
         if context.joker_main then
-            c = 1 + 0.25 * G.GAME.consumeable_usage_total.tarot
-            return {
-                card = card,
-                Xmult_mod = c,
-                message = 'x' .. c,
-                colour = G.C.MULT
-            }
+            c = 1 + card.ability.extra.Xmult_scale * G.GAME.consumeable_usage_total.tarot
+            if c ~= 1 then
+                return {
+                    card = card,
+                    Xmult_mod = c,
+                    message = 'x' .. c,
+                    colour = G.C.MULT
+                }
+            end
         end
     end
 }
-
