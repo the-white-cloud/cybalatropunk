@@ -1,0 +1,13 @@
+{
+    "id": "Cybalatropunk",
+    "name": "Cybalatropunk",
+    "display_name": "Cybalatropunk",
+    "author": ["Jules (the-white-cloud)"],
+    "description": "Adds Cyberpunk 2077 inspired Jokers and other stuff.",
+    "prefix": "cbpunk",
+    "main_file": "main.lua",
+    "priority": 0,
+    "badge_colour": "FFEB0B",
+    "version": "0.0.1a",
+    "dependencies": ["Steamodded (>=1.0.0~BETA-0525b)"]
+}
