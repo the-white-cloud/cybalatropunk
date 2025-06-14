@@ -44,6 +44,19 @@ SMODS.Joker{
                 }
             end
         end
+    end,
+    joker_display_def = function(JokerDisplay)
+        ---@type JDJokerDefinition
+        return {
+            text = {
+                {
+                    border_nodes = {
+                        { text = "X" },
+                        { ref_table = "card.ability", ref_value = "x_mult", retrigger_type = "exp" }
+                    }
+                }
+            }
+        }
     end
 }
 -- endregion Misty
