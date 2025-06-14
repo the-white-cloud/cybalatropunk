@@ -10,9 +10,9 @@
 
 SMODS.Atlas{
     key = 'j_cbpunk_jokers',
-    path = 'misty_joker.png',
+    path = 'jokers.png',
     px = 71,
-    py = 95
+    py = 85
 }
 
 local files = {
