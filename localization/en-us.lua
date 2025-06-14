@@ -8,11 +8,11 @@ return {
         Joker = {
             j_cbpunk_Misty = {
                 name = "Misty",
-                text={
+                text = {
                     "This Joker gains",
-                    "{X:mult,C:white} X#25# {} Mult every time",
+                    "{X:mult,C:white} X#2# {} Mult every time",
                     "a {C:tarot}Tarot{} card is used",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                    "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)",
                 }
             }
         }
