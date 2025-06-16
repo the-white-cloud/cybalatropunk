@@ -14,6 +14,15 @@ return {
                     "a {C:tarot}Tarot{} card is used",
                     "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)",
                 }
+            },
+            j_cbpunk_Bill_Mitchel = {
+                name = "Bill Mitchel",
+                text = {
+                    "This Joker gains",
+                    "{C:red} +1{} Mult every time",
+                    "a card gets destroyed.",
+                    "{C:inactive}(Currently {C:red}+#1#{C:inactive} Mult)",
+                }
             }
         }
     }
