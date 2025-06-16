@@ -19,6 +19,7 @@ local files = {
   jokers = {
     list = {
       --You can rearrange the joker order in the collection by changing the order here
+      "bill_mitchel",
       "misty",
     },
     directory = 'jokers/'
