@@ -38,7 +38,7 @@ SMODS.Joker{
                         return true
                     end
                     }))
-                card_eval_status_text(self, 'mult', card.ability.mult, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.mult + card.ability.extra*destroyed_cards}}})
+                card_eval_status_text(card, 'mult', card.ability.mult, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.mult + card.ability.extra*destroyed_cards}}})
                 return true
                 end
                 }))
@@ -60,7 +60,7 @@ SMODS.Joker{
                           return true
                         end
                       }))
-                    card_eval_status_text(self, 'mult', card.ability.mult, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.mult + card.ability.extra*destroyed_cards}}})
+                    card_eval_status_text(card, 'mult', card.ability.mult, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.mult + card.ability.extra*destroyed_cards}}})
                     return true
                 end
               }))
