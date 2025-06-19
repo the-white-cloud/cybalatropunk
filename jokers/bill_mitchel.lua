@@ -32,15 +32,15 @@ SMODS.Joker{
             if destroyed_cards > 0 then
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        card.ability.mult = card.ability.mult + card.ability.extra*destroyed_cards
-                        return true
-                    end
+                        G.E_MANAGER:add_event(Event({
+                        func = function()
+                            card.ability.mult = card.ability.mult + card.ability.extra*destroyed_cards
+                            return true
+                        end
                     }))
-                card_eval_status_text(card, 'mult', card.ability.mult, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.mult + card.ability.extra*destroyed_cards}}})
-                return true
-                end
+                    card_eval_status_text(card, 'mult', card.ability.mult, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.mult + card.ability.extra*destroyed_cards}}})
+                    return true
+                    end
                 }))
             end
             return  
@@ -52,18 +52,18 @@ SMODS.Joker{
                 destroyed_cards = destroyed_cards + 1
             end
             if destroyed_cards > 0 then
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                    G.E_MANAGER:add_event(Event({
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        G.E_MANAGER:add_event(Event({
                         func = function()
                             card.ability.mult = card.ability.mult + card.ability.extra*destroyed_cards
-                          return true
+                            return true
                         end
-                      }))
+                    }))
                     card_eval_status_text(card, 'mult', card.ability.mult, nil, nil, {message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.mult + card.ability.extra*destroyed_cards}}})
                     return true
-                end
-              }))
+                    end
+                }))
             end
         end
 
@@ -80,15 +80,16 @@ SMODS.Joker{
     end,
     joker_display_def = function(JokerDisplay)
         ---@type JDJokerDefinition
-        return {
+        return  {
             text = {
-                {
-                    border_nodes = {
-                        { text = "+" },
-                        { ref_table = "card.ability", ref_value = "mult", retrigger_type = "mult" }
-                    }
-                }
-            }
+                { text = "+" },
+                { ref_table = "card.ability", ref_value = "mult", retrigger_type = "mult" }
+            },
+            text_config = { colour = G.C.MULT },
+            calc_function = function(card)
+                card.joker_display_values.mult = G.GAME and G.GAME.consumeable_usage_total and
+                    G.GAME.consumeable_usage_total.tarot or 0
+            end
         }
     end
 }
