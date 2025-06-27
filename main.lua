@@ -21,6 +21,7 @@ local files = {
       --You can rearrange the joker order in the collection by changing the order here
       "bill_mitchel",
       "misty",
+      "brendan",
     },
     directory = 'jokers/'
   },
