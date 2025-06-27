@@ -5,6 +5,7 @@ SMODS.Joker{
 	atlas = "j_cbpunk_jokers",
 	config = {mult = 0, extra = 1},
 	pos = {x = 1, y = 0},
+    pixel_size = { w = 71, h = 85},
 	rarity = 1,
 	cost = 2,
 	discovered = true,
