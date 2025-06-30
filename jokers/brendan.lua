@@ -6,11 +6,11 @@ SMODS.Joker{
 	config = {
 		extra = {
 			chance = 4,
-			round = 0,
-		},
+			round = -1
+		}
 	},
 	pos = {x = 2, y = 0},
-    pixel_size = { w = 71, h = 95},
+    pixel_size = { w = 71, h = 95 },
 	rarity = 3,
 	cost = 7,
 	discovered = true,
@@ -24,21 +24,26 @@ SMODS.Joker{
 	},
     description = "1 in 4 chance for a booster pack to be free.",
     loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.extra.chance}}
+        return {vars = {card.ability.extra.chance, G.GAME.probabilities.normal}}
     end,
 
     calculate = function(self, card, context)
-		if G.shop and (card.ability.extra.round ~= G.round) then
-			card.ability.extra.round = G.round
+		if G.shop and card.ability.extra.round ~= G.GAME.round then
+			local done = 0
 			for k, v in pairs(G.shop_booster.cards) do
-                if (math.random(card.ability.extra.chance) == 1) then
+                if (pseudorandom("cbpunk_brendan") < G.GAME.probabilities.normal/card.ability.extra.chance) then
 					v.ability.couponed = true
 					v:set_cost()
-					card_eval_status_text(card, 'extra chance', 0, nil, nil, {message = "Take this!"})
+					done = done + 1
 				end
             end
+			card.ability.extra.round = G.GAME.round
+			if done ~= 0 then 
+				if done == 1 then return { message = "Freebie!" } end
+				return {message = "Freebie! x"..done}
+			end
+
 		end
-		
     end
 }
 -- endregion Brendan

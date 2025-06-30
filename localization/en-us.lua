@@ -23,6 +23,10 @@ return {
                     "a card gets destroyed.",
                     "{C:inactive}(Currently {C:red}+#1#{C:inactive} Mult)",
                 }
+            },
+            j_cbpunk_Brendan = {
+                name = "Brendan",
+                text = {"Has a #2# in #1# chance to make a booster pack free."}
             }
         }
     }
