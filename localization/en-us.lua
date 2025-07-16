@@ -26,7 +26,10 @@ return {
             },
             j_cbpunk_Brendan = {
                 name = "Brendan",
-                text = {"Has a #2# in #1# chance to make a booster pack free."}
+                text = {
+                    "{C:green}#2# in #1#{} chance to",
+                    "make a {C:attention}Booster Pack{} free."
+                }
             }
         }
     }
