@@ -30,6 +30,15 @@ return {
                     "{C:green}#2# in #1#{} chance to",
                     "make a {C:attention}Booster Pack{} free."
                 }
+            },
+            j_cbpunk_Charles_Wilson = {
+                name = "Charles Wilson",
+                text = {
+                    "Bribe to look the other way.",
+                    "(Once a blind, you can pay {C:money}$#1#{}",
+                    "to reduce blind target by {C:attention}#2#%{})",
+                    "{C:inactive}(Currently {C:attention}#3#{C:inactive}){}"
+                }
             }
         }
     }
