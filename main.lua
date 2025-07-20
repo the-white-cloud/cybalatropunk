@@ -11,8 +11,8 @@
 SMODS.Atlas{
     key = 'j_cbpunk_jokers',
     path = 'jokers.png',
-    px = 71,
-    py = 95
+    px = 72,
+    py = 96
 }
 
 local files = {
@@ -20,6 +20,7 @@ local files = {
     list = {
       --You can rearrange the joker order in the collection by changing the order here
       "bill_mitchel",
+      "charles_wilson",
       "misty",
       "brendan",
     },
