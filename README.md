@@ -8,7 +8,7 @@ Made by the-white-cloud (Code), the-white-cloud (Art) -> This is the reason why 
 | ---  | ---    | ---|
 |Bill Mitchel| Common | +1 Mult for each Card Destroyed while held |
 |Misty| Rare | +0.25 XMult for each Tarot Card used while held |
-|Brendan| Rare | 1 in 4 chance for each Booster Pack to be free (in the shop) |
+|Brendan| Rare | 1 in 3 chance for each Booster Pack to be free (in the shop) |
 
 # Jokers (in development)
 | Name | Rarity | Ability|

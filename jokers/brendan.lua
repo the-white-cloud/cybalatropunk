@@ -5,7 +5,7 @@ SMODS.Joker{
 	atlas = "j_cbpunk_jokers",
 	config = {
 		extra = {
-			chance = 4,
+			chance = 3,
 			round = -1
 		}
 	},
@@ -22,7 +22,7 @@ SMODS.Joker{
 		code = "Jules (the-white-cloud)",
 		concept = "Jules (the-white-cloud)"
 	},
-    description = "1 in 4 chance for a booster pack to be free.",
+    description = "1 in 3 chance for a booster pack to be free.",
     loc_vars = function(self, info_queue, card)
         return {vars = {card.ability.extra.chance, G.GAME.probabilities.normal}}
     end,
