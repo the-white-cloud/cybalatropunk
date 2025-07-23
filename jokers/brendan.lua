@@ -31,7 +31,7 @@ SMODS.Joker{
 		if G.shop and card.ability.extra.round ~= G.GAME.round then
 			local done = 0
 			for k, v in pairs(G.shop_booster.cards) do
-                if (pseudorandom("cbpunk_brendan") < G.GAME.probabilities.normal/card.ability.extra.chance) then
+                if pseudorandom("cbpunk_brendan") < G.GAME.probabilities.normal/card.ability.extra.chance then
 					v.ability.couponed = true
 					v:set_cost()
 					done = done + 1
