@@ -15,6 +15,13 @@ SMODS.Atlas{
     py = 95
 }
 
+SMODS.Atlas {
+  key = 'modicon',
+  px = 32,
+  py = 32,
+  path = 'modicon.png'
+}
+
 local files = {
   jokers = {
     list = {
