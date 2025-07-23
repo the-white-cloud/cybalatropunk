@@ -73,7 +73,7 @@ SMODS.Joker{
                 return {
                     card = card,
                     mult_mod = card.ability.mult,
-                    message = '+' .. card.ability.mult,
+                    message = '+' .. card.ability.mult .. " Mult",
                     colour = G.C.MULT
                 }
             end
